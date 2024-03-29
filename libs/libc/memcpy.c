@@ -24,13 +24,12 @@
 
 # include <stddef.h>
 
-int memcmp(const void *s1, const void *s2, size_t n) {
-	const char *d1 =  s1;
-	const char *d2 =  s2;
+void *memcpy(void *s1, const void *s2, size_t n) {
+	const char *s = s2;
+	char *d = s1;
 
-	for (size_t i = 0; i < n; ++i)
-		if (d1[i] != d2[2])
-			return d1[i] < d2[i] ? -1 : 1;
+	while (n--)
+		*d++ = *s++;
 
-	return 0;
+	return s1;
 }

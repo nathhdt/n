@@ -24,12 +24,12 @@
 
 # include <stddef.h>
 
-void *memchr(const void *memoryBlock, int searchedChar, size_t size) {
-	const char *data = memoryBlock;
+void *memchr(const void *s, int c, size_t n) {
+	const char *d = s;
 
-	while (size--)
-		if (*data++ == (char)searchedChar)
-			return (void *)(data - 1);
+	while (n--)
+		if (*d++ == (char)c)
+			return (void *)(d - 1);
 
 	return NULL;
 }

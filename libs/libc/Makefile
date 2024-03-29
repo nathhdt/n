@@ -28,6 +28,7 @@ LIB	= libc.a
 OBJS	= \
 	  memchr.o \
 	  memcmp.o \
+	  memcpy.o \
 
 DEPS	= $(OBJS:.o=.d)
 
