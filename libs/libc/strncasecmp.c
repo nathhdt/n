@@ -22,25 +22,13 @@
 * SOFTWARE.
 */
 
-#ifndef STRING_H
-#define STRING_H
+#include "include/string.h"
+#include "include/ctype.h"
 
-#include <stddef.h>
+int strncase(const char *s1, const char *s2, size_t n) {
+	for (; *s1 && n > 0; s1++, s2++, n--)
+		if (tolower(*s1) != tolower(*s2))
+			break;
 
-void *memchr(const void *s, int c, size_t n);
-int memcmp(const void *s1, const void *s2, size_t n);
-void *memcpy(void *s1, const void *s2, size_t n);
-void *memmove(void *s1, const void *s2, size_t n);
-void *memset(void *s, int c, size_t n);
-int strcasecmp(const char *s1, const char *s2);
-int strncasecmp(const char *s1, const char *s2, size_t n);
-char *strcpy(char *dst, const char *src);
-char *strncpy(char *dst, const char *src, size_t n);
-size_t strlen(const char *s);
-size_t strnlen(const char *s, size_t n);
-char *strcat(char *s1, const char *s2);
-int strcmp(const char *s1, const char *s2);
-int strncmp(const char *s1, const char *s2, size_t n);
-char *strdup(const char *s);
-
-#endif
+	return n ? tolower(*s1) - tolower(*s2) : 0;
+}

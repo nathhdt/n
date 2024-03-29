@@ -31,6 +31,17 @@ OBJS	= \
 	  memcpy.o \
 	  memmove.o \
 	  memset.o \
+	  strcasecmp.o \
+	  strncasecmp.o \
+	  strcpy.o \
+	  strncpy.o \
+	  strlen.o \
+	  strnlen.o \
+	  strcat.o \
+	  strcmp.o \
+	  strncmp.o \
+	  malloc.o \
+	  strdup.o \
 
 DEPS	= $(OBJS:.o=.d)
 
