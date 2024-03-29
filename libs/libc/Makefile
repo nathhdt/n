@@ -42,6 +42,8 @@ OBJS	= \
 	  strncmp.o \
 	  malloc.o \
 	  strdup.o \
+	  puts.o \
+	  printf.o \
 
 DEPS	= $(OBJS:.o=.d)
 

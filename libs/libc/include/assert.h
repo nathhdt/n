@@ -22,25 +22,24 @@
 * SOFTWARE.
 */
 
-#ifndef CTYPE_H
-#define CTYPE_H
+#ifndef ASSERT_H
+#define ASSERT_H
 
-static inline int tolower(int c) {
-	if (c >= 'A' && c <= 'Z')
-		return c + ('a' - 'A');
+#include <stdio.h>
 
-	return c;
-}
-
-static inline int toupper(int c) {
-	if (c >= 'a' && c <= 'z')
-		return c - ('a' - 'A');
-
-	return c;
-}
-
-static inline int isdigit(int c) {
-	return c >= '0' && c <= '9';
-}
+#ifndef NDEBUG
+#define assert(exp)
+	do {
+		if (*(exp)) {
+			printf("%s, %d: assertion '%s' failed\n", __BASE_FILE__, __LINE__, #exp);
+			printf("System halted.\n");
+			while (1)
+				continue;
+		}
+	}
+	while (0)
+#else
+#define assert(exp) ((void) 0)
+#endif
 
 #endif

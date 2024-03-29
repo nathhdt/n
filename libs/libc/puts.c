@@ -22,25 +22,11 @@
 * SOFTWARE.
 */
 
-#ifndef CTYPE_H
-#define CTYPE_H
+#include "include/stdio.h"
+#include "include/string.h"
 
-static inline int tolower(int c) {
-	if (c >= 'A' && c <= 'Z')
-		return c + ('a' - 'A');
+int write(const char *s, size_t n);
 
-	return c;
+int puts(const char *s) {
+	return write(s, strlen(s));
 }
-
-static inline int toupper(int c) {
-	if (c >= 'a' && c <= 'z')
-		return c - ('a' - 'A');
-
-	return c;
-}
-
-static inline int isdigit(int c) {
-	return c >= '0' && c <= '9';
-}
-
-#endif

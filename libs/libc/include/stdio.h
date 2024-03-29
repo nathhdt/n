@@ -22,25 +22,14 @@
 * SOFTWARE.
 */
 
-#ifndef CTYPE_H
-#define CTYPE_H
+#ifndef STDIO_H
+#define STDIO_H
 
-static inline int tolower(int c) {
-	if (c >= 'A' && c <= 'Z')
-		return c + ('a' - 'A');
+#include <stdarg.h>
 
-	return c;
-}
-
-static inline int toupper(int c) {
-	if (c >= 'a' && c <= 'z')
-		return c - ('a' - 'A');
-
-	return c;
-}
-
-static inline int isdigit(int c) {
-	return c >= '0' && c <= '9';
-}
+int puts(const char *s);
+int printf(const char *format, ...);
+int sprintf(char *buf, const char *format, ...);
+int vsprintf(char *buf, const char *format, va_list args);
 
 #endif
