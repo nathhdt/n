@@ -24,12 +24,11 @@
 
 #include "include/string.h"
 
-void *memcpy(void *s1, const void *s2, size_t n) {
-	char *d = s1;
-	const char *s = s2;
+void *memset(void *s, int c, size_t n) {
+	char *p = s;
 
-	while (n--)
-		*d++ = *s++;
+	for(size_t i = 0; i < n; i++)
+		p[i] = c;
 
-	return s1;
+	return s;
 }

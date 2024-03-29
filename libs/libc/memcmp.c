@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 
-# include <stddef.h>
+#include "include/string.h"
 
 int memcmp(const void *s1, const void *s2, size_t n) {
 	const char *d1 =  s1;

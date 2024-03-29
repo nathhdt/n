@@ -24,12 +24,14 @@
 
 #include "include/string.h"
 
-void *memcpy(void *s1, const void *s2, size_t n) {
+void *memmove(void *s1, const void *s2, size_t n) {
 	char *d = s1;
 	const char *s = s2;
 
-	while (n--)
-		*d++ = *s++;
+	if (s < d && s + n > d) {
+		while (n-- > 0)
+			d[n] = s[n];
+	}
 
-	return s1;
+	return memcpy(s1, s2, n);
 }

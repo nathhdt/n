@@ -29,6 +29,8 @@ OBJS	= \
 	  memchr.o \
 	  memcmp.o \
 	  memcpy.o \
+	  memmove.o \
+	  memset.o \
 
 DEPS	= $(OBJS:.o=.d)
 
