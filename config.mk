@@ -22,9 +22,6 @@
 # SOFTWARE.
 #
 
-include config.mk
-
-KERNEL_PATH	= ./kernel
-LIBS_PATH	= ./libs
-
-n: libs/libc
+AR	= ar
+ARFLAGS	= scr
+RM	= rm -f

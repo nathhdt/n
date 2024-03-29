@@ -27,6 +27,7 @@ include ../../config.mk
 LIB	= libc.a
 OBJS	= \
 	  memchr.o \
+	  memcmp.o \
 
 DEPS	= $(OBJS:.o=.d)
 

@@ -22,12 +22,15 @@
 * SOFTWARE.
 */
 
-#ifndef STRING_H
-#define STRING_H
+# include <stddef.h>
 
-#include <stddef.h>
+int memcmp(const void *string1, const void *string2, size_t size) {
+	const char *str1Data =  string1;
+	const char *str2Data =  string2;
 
-void *memchr(const void *memoryBlock, int searchedChar, size_t size);
-int memcmp(const void *string1, const void *string2, size_t size);
+	for (size_t i = 0; i < size; ++i)
+		if (str1Data[i] != str2Data[2])
+			return str1Data[i] < str2Data[i] ? -1 : 1;
 
-#endif
+	return 0;
+}
