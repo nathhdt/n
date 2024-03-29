@@ -1,18 +1,18 @@
-/* 
+/*
 * MIT License
-* 
+*
 * Copyright (c) 2024 Nathan H.
-* 
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 * copies of the Software, and to permit persons to whom the Software is
 * furnished to do so, subject to the following conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be included in all
 * copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,14 +22,11 @@
 * SOFTWARE.
 */
 
-#ifndef STDIO_H
-#define STDIO_H
+#ifndef STRING_H
+#define STRING_H
 
-#include <stdarg.h>
+#include <stddef.h>
 
-int puts(const char *s);
-int printf(const char *format, ...);
-int sprintf(char *buf, const char *format, ...);
-int vsprintf(char *buf, const char *format, va_list args);
+void *memchr(const void *memoryBlock, int searchedChar, size_t size);
 
 #endif
